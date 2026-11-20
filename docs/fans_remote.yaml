@@ -1,0 +1,700 @@
+title: Fan Remotes
+views:
+- title: Fans
+  path: fans
+  cards:
+  - type: vertical-stack
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: Fan 1
+        entities:
+        - entity: fan.bedroom_fan_rf_remote_3_fans_fan_1
+          name: Fan 1
+      - type: picture-elements
+        image: /local/remotes/fan_remote.svg
+        elements:
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_on
+          style:
+            left: 26.36%
+            top: 11.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_off
+          style:
+            left: 73.64%
+            top: 11.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_1
+          style:
+            left: 29.09%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_2
+          style:
+            left: 50.0%
+            top: 20.38%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_3
+          style:
+            left: 70.91%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_4
+          style:
+            left: 50.0%
+            top: 40.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_5
+          style:
+            left: 50.0%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_sleep
+          style:
+            left: 20.91%
+            top: 48.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_hyp
+          style:
+            left: 79.09%
+            top: 48.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_1h
+          style:
+            left: 50.0%
+            top: 49.62%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_2h
+          style:
+            left: 50.0%
+            top: 58.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_3h
+          style:
+            left: 50.0%
+            top: 66.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_1_4h
+          style:
+            left: 50.0%
+            top: 75.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: Fan 2
+        entities:
+        - entity: fan.bedroom_fan_rf_remote_3_fans_fan_2
+          name: Fan 2
+      - type: picture-elements
+        image: /local/remotes/fan_remote.svg
+        elements:
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_on
+          style:
+            left: 26.36%
+            top: 11.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_off
+          style:
+            left: 73.64%
+            top: 11.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_1
+          style:
+            left: 29.09%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_2
+          style:
+            left: 50.0%
+            top: 20.38%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_3
+          style:
+            left: 70.91%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_4
+          style:
+            left: 50.0%
+            top: 40.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_5
+          style:
+            left: 50.0%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_sleep
+          style:
+            left: 20.91%
+            top: 48.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_hyp
+          style:
+            left: 79.09%
+            top: 48.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_1h
+          style:
+            left: 50.0%
+            top: 49.62%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_2h
+          style:
+            left: 50.0%
+            top: 58.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_3h
+          style:
+            left: 50.0%
+            top: 66.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_2_4h
+          style:
+            left: 50.0%
+            top: 75.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: Fan 3
+        entities:
+        - entity: fan.bedroom_fan_rf_remote_3_fans_fan_3
+          name: Fan 3
+      - type: picture-elements
+        image: /local/remotes/fan_remote.svg
+        elements:
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_on
+          style:
+            left: 26.36%
+            top: 11.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_off
+          style:
+            left: 73.64%
+            top: 11.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_1
+          style:
+            left: 29.09%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_2
+          style:
+            left: 50.0%
+            top: 20.38%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_3
+          style:
+            left: 70.91%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_4
+          style:
+            left: 50.0%
+            top: 40.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_5
+          style:
+            left: 50.0%
+            top: 30.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_sleep
+          style:
+            left: 20.91%
+            top: 48.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_hyp
+          style:
+            left: 79.09%
+            top: 48.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_1h
+          style:
+            left: 50.0%
+            top: 49.62%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_2h
+          style:
+            left: 50.0%
+            top: 58.08%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_3h
+          style:
+            left: 50.0%
+            top: 66.54%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'
+        - type: action-button
+          title: ' '
+          action: button.press
+          target:
+            entity_id: button.bedroom_fan_rf_remote_3_fans_fan_3_4h
+          style:
+            left: 50.0%
+            top: 75.0%
+            width: 44px
+            height: 44px
+            background: transparent
+            border: none
+            color: transparent
+            font-size: '0'
+            padding: '0'
+            cursor: pointer
+            opacity: '0.01'

@@ -1,0 +1,13 @@
+
+# --- Homelab dashboard ---
+lovelace:
+  dashboards:
+    homelab-dashboard:
+      mode: yaml
+      title: Homelab
+      icon: mdi:home-assistant
+      show_in_sidebar: true
+      filename: homelab-dashboard.yaml
+    fan-remotes:
+      mode: yaml
+      title: Fan Remotes
