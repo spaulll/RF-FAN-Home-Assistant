@@ -63,6 +63,18 @@ globals:
   - id: last_level
     type: int
     initial_value: '-1'
+  - id: suppress_rf
+    type: bool
+    initial_value: 'false'
+
+switch:
+  - platform: template
+    id: suppress_rf_switch
+    name: RF Suppress
+    turn_on_action:
+      - lambda: 'id(suppress_rf) = true;'
+    turn_off_action:
+      - lambda: 'id(suppress_rf) = false;'
 
 script:
   - id: fan1_send
@@ -439,27 +451,27 @@ output:
             id(boot_writes) = 1;
             return;
           }
+          int lvl = 0;
           if (state == 0.0f) {
-            if (id(last_level) != 0) {
-              id(fan1_send).execute(0);
-              id(last_level) = 0;
-            }
+            lvl = 0;
           } else {
-            int sp = (int)round(state * 5.0f);
-            if (sp < 1) {
-              if (id(last_level) != 6) {
-                id(fan1_send).execute(6);
-                id(last_level) = 6;
-              }
+            lvl = (int)round(state * 5.0f);
+            if (lvl < 1) lvl = 6;
+          }
+          if (id(last_level) == lvl) return;
+          if (!id(suppress_rf)) {
+            if (lvl == 0) {
+              id(fan1_send).execute(0);
+            } else if (lvl == 6) {
+              id(fan1_send).execute(6);
             } else {
-              if (id(last_level) == sp) return;
               if (id(last_level) <= 0 || id(last_level) == 6) {
                 id(fan1_send).execute(6);
               }
-              id(fan1_send).execute(sp);
-              id(last_level) = sp;
+              id(fan1_send).execute(lvl);
             }
           }
+          id(last_level) = lvl;
   - platform: template
     id: fan2_speed_out
     type: float
@@ -469,27 +481,27 @@ output:
             id(boot_writes) = 1;
             return;
           }
+          int lvl = 0;
           if (state == 0.0f) {
-            if (id(last_level) != 0) {
-              id(fan2_send).execute(0);
-              id(last_level) = 0;
-            }
+            lvl = 0;
           } else {
-            int sp = (int)round(state * 5.0f);
-            if (sp < 1) {
-              if (id(last_level) != 6) {
-                id(fan2_send).execute(6);
-                id(last_level) = 6;
-              }
+            lvl = (int)round(state * 5.0f);
+            if (lvl < 1) lvl = 6;
+          }
+          if (id(last_level) == lvl) return;
+          if (!id(suppress_rf)) {
+            if (lvl == 0) {
+              id(fan2_send).execute(0);
+            } else if (lvl == 6) {
+              id(fan2_send).execute(6);
             } else {
-              if (id(last_level) == sp) return;
               if (id(last_level) <= 0 || id(last_level) == 6) {
                 id(fan2_send).execute(6);
               }
-              id(fan2_send).execute(sp);
-              id(last_level) = sp;
+              id(fan2_send).execute(lvl);
             }
           }
+          id(last_level) = lvl;
   - platform: template
     id: fan3_speed_out
     type: float
@@ -499,27 +511,27 @@ output:
             id(boot_writes) = 1;
             return;
           }
+          int lvl = 0;
           if (state == 0.0f) {
-            if (id(last_level) != 0) {
-              id(fan3_send).execute(0);
-              id(last_level) = 0;
-            }
+            lvl = 0;
           } else {
-            int sp = (int)round(state * 5.0f);
-            if (sp < 1) {
-              if (id(last_level) != 6) {
-                id(fan3_send).execute(6);
-                id(last_level) = 6;
-              }
+            lvl = (int)round(state * 5.0f);
+            if (lvl < 1) lvl = 6;
+          }
+          if (id(last_level) == lvl) return;
+          if (!id(suppress_rf)) {
+            if (lvl == 0) {
+              id(fan3_send).execute(0);
+            } else if (lvl == 6) {
+              id(fan3_send).execute(6);
             } else {
-              if (id(last_level) == sp) return;
               if (id(last_level) <= 0 || id(last_level) == 6) {
                 id(fan3_send).execute(6);
               }
-              id(fan3_send).execute(sp);
-              id(last_level) = sp;
+              id(fan3_send).execute(lvl);
             }
           }
+          id(last_level) = lvl;
 
 fan:
   - platform: speed
@@ -538,37 +550,37 @@ fan:
 button:
   - platform: template
     name: "Fan 1 · OFF"
-    id: fan1_power_off_btn
+    id: fan1_off_btn
     on_press:
       - script.execute: {id: fan1_send, key: 0}
   - platform: template
     name: "Fan 1 · 1"
-    id: fan1_speed_1_btn
+    id: fan1_1_btn
     on_press:
       - script.execute: {id: fan1_send, key: 1}
   - platform: template
     name: "Fan 1 · 2"
-    id: fan1_speed_2_btn
+    id: fan1_2_btn
     on_press:
       - script.execute: {id: fan1_send, key: 2}
   - platform: template
     name: "Fan 1 · 3"
-    id: fan1_speed_3_btn
+    id: fan1_3_btn
     on_press:
       - script.execute: {id: fan1_send, key: 3}
   - platform: template
     name: "Fan 1 · 4"
-    id: fan1_speed_4_btn
+    id: fan1_4_btn
     on_press:
       - script.execute: {id: fan1_send, key: 4}
   - platform: template
     name: "Fan 1 · 5"
-    id: fan1_speed_5_btn
+    id: fan1_5_btn
     on_press:
       - script.execute: {id: fan1_send, key: 5}
   - platform: template
     name: "Fan 1 · ON"
-    id: fan1_power_on_btn
+    id: fan1_on_btn
     on_press:
       - script.execute: {id: fan1_send, key: 6}
   - platform: template
@@ -578,62 +590,62 @@ button:
       - script.execute: {id: fan1_send, key: 7}
   - platform: template
     name: "Fan 1 · HYP"
-    id: fan1_hyper_btn
+    id: fan1_hyp_btn
     on_press:
       - script.execute: {id: fan1_send, key: 8}
   - platform: template
     name: "Fan 1 · 1H"
-    id: fan1_timer_1h_btn
+    id: fan1_1h_btn
     on_press:
       - script.execute: {id: fan1_send, key: 9}
   - platform: template
     name: "Fan 1 · 2H"
-    id: fan1_timer_2h_btn
+    id: fan1_2h_btn
     on_press:
       - script.execute: {id: fan1_send, key: 10}
   - platform: template
     name: "Fan 1 · 3H"
-    id: fan1_timer_3h_btn
+    id: fan1_3h_btn
     on_press:
       - script.execute: {id: fan1_send, key: 11}
   - platform: template
     name: "Fan 1 · 4H"
-    id: fan1_timer_4h_btn
+    id: fan1_4h_btn
     on_press:
       - script.execute: {id: fan1_send, key: 12}
   - platform: template
     name: "Fan 2 · OFF"
-    id: fan2_power_off_btn
+    id: fan2_off_btn
     on_press:
       - script.execute: {id: fan2_send, key: 0}
   - platform: template
     name: "Fan 2 · 1"
-    id: fan2_speed_1_btn
+    id: fan2_1_btn
     on_press:
       - script.execute: {id: fan2_send, key: 1}
   - platform: template
     name: "Fan 2 · 2"
-    id: fan2_speed_2_btn
+    id: fan2_2_btn
     on_press:
       - script.execute: {id: fan2_send, key: 2}
   - platform: template
     name: "Fan 2 · 3"
-    id: fan2_speed_3_btn
+    id: fan2_3_btn
     on_press:
       - script.execute: {id: fan2_send, key: 3}
   - platform: template
     name: "Fan 2 · 4"
-    id: fan2_speed_4_btn
+    id: fan2_4_btn
     on_press:
       - script.execute: {id: fan2_send, key: 4}
   - platform: template
     name: "Fan 2 · 5"
-    id: fan2_speed_5_btn
+    id: fan2_5_btn
     on_press:
       - script.execute: {id: fan2_send, key: 5}
   - platform: template
     name: "Fan 2 · ON"
-    id: fan2_power_on_btn
+    id: fan2_on_btn
     on_press:
       - script.execute: {id: fan2_send, key: 6}
   - platform: template
@@ -643,62 +655,62 @@ button:
       - script.execute: {id: fan2_send, key: 7}
   - platform: template
     name: "Fan 2 · HYP"
-    id: fan2_hyper_btn
+    id: fan2_hyp_btn
     on_press:
       - script.execute: {id: fan2_send, key: 8}
   - platform: template
     name: "Fan 2 · 1H"
-    id: fan2_timer_1h_btn
+    id: fan2_1h_btn
     on_press:
       - script.execute: {id: fan2_send, key: 9}
   - platform: template
     name: "Fan 2 · 2H"
-    id: fan2_timer_2h_btn
+    id: fan2_2h_btn
     on_press:
       - script.execute: {id: fan2_send, key: 10}
   - platform: template
     name: "Fan 2 · 3H"
-    id: fan2_timer_3h_btn
+    id: fan2_3h_btn
     on_press:
       - script.execute: {id: fan2_send, key: 11}
   - platform: template
     name: "Fan 2 · 4H"
-    id: fan2_timer_4h_btn
+    id: fan2_4h_btn
     on_press:
       - script.execute: {id: fan2_send, key: 12}
   - platform: template
     name: "Fan 3 · OFF"
-    id: fan3_power_off_btn
+    id: fan3_off_btn
     on_press:
       - script.execute: {id: fan3_send, key: 0}
   - platform: template
     name: "Fan 3 · 1"
-    id: fan3_speed_1_btn
+    id: fan3_1_btn
     on_press:
       - script.execute: {id: fan3_send, key: 1}
   - platform: template
     name: "Fan 3 · 2"
-    id: fan3_speed_2_btn
+    id: fan3_2_btn
     on_press:
       - script.execute: {id: fan3_send, key: 2}
   - platform: template
     name: "Fan 3 · 3"
-    id: fan3_speed_3_btn
+    id: fan3_3_btn
     on_press:
       - script.execute: {id: fan3_send, key: 3}
   - platform: template
     name: "Fan 3 · 4"
-    id: fan3_speed_4_btn
+    id: fan3_4_btn
     on_press:
       - script.execute: {id: fan3_send, key: 4}
   - platform: template
     name: "Fan 3 · 5"
-    id: fan3_speed_5_btn
+    id: fan3_5_btn
     on_press:
       - script.execute: {id: fan3_send, key: 5}
   - platform: template
     name: "Fan 3 · ON"
-    id: fan3_power_on_btn
+    id: fan3_on_btn
     on_press:
       - script.execute: {id: fan3_send, key: 6}
   - platform: template
@@ -708,26 +720,26 @@ button:
       - script.execute: {id: fan3_send, key: 7}
   - platform: template
     name: "Fan 3 · HYP"
-    id: fan3_hyper_btn
+    id: fan3_hyp_btn
     on_press:
       - script.execute: {id: fan3_send, key: 8}
   - platform: template
     name: "Fan 3 · 1H"
-    id: fan3_timer_1h_btn
+    id: fan3_1h_btn
     on_press:
       - script.execute: {id: fan3_send, key: 9}
   - platform: template
     name: "Fan 3 · 2H"
-    id: fan3_timer_2h_btn
+    id: fan3_2h_btn
     on_press:
       - script.execute: {id: fan3_send, key: 10}
   - platform: template
     name: "Fan 3 · 3H"
-    id: fan3_timer_3h_btn
+    id: fan3_3h_btn
     on_press:
       - script.execute: {id: fan3_send, key: 11}
   - platform: template
     name: "Fan 3 · 4H"
-    id: fan3_timer_4h_btn
+    id: fan3_4h_btn
     on_press:
       - script.execute: {id: fan3_send, key: 12}

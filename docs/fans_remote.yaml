@@ -23,15 +23,16 @@ views:
           style:
             left: 26.36%
             top: 11.54%
+            transform: translate(-50%, -50%)
             width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -40,15 +41,16 @@ views:
           style:
             left: 73.64%
             top: 11.54%
+            transform: translate(-50%, -50%)
             width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -57,15 +59,16 @@ views:
           style:
             left: 29.09%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -74,15 +77,16 @@ views:
           style:
             left: 50.0%
             top: 20.38%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -91,15 +95,16 @@ views:
           style:
             left: 70.91%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -108,15 +113,16 @@ views:
           style:
             left: 50.0%
             top: 40.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -125,15 +131,16 @@ views:
           style:
             left: 50.0%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -142,15 +149,16 @@ views:
           style:
             left: 20.91%
             top: 48.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 54px
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -159,15 +167,16 @@ views:
           style:
             left: 79.09%
             top: 48.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 54px
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -176,15 +185,16 @@ views:
           style:
             left: 50.0%
             top: 49.62%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -193,15 +203,16 @@ views:
           style:
             left: 50.0%
             top: 58.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -210,15 +221,16 @@ views:
           style:
             left: 50.0%
             top: 66.54%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -227,15 +239,16 @@ views:
           style:
             left: 50.0%
             top: 75.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
     - type: vertical-stack
       cards:
       - type: entities
@@ -254,15 +267,16 @@ views:
           style:
             left: 26.36%
             top: 11.54%
+            transform: translate(-50%, -50%)
             width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -271,15 +285,16 @@ views:
           style:
             left: 73.64%
             top: 11.54%
+            transform: translate(-50%, -50%)
             width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -288,15 +303,16 @@ views:
           style:
             left: 29.09%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -305,15 +321,16 @@ views:
           style:
             left: 50.0%
             top: 20.38%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -322,15 +339,16 @@ views:
           style:
             left: 70.91%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -339,15 +357,16 @@ views:
           style:
             left: 50.0%
             top: 40.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -356,15 +375,16 @@ views:
           style:
             left: 50.0%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -373,15 +393,16 @@ views:
           style:
             left: 20.91%
             top: 48.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 54px
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -390,15 +411,16 @@ views:
           style:
             left: 79.09%
             top: 48.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 54px
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -407,15 +429,16 @@ views:
           style:
             left: 50.0%
             top: 49.62%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -424,15 +447,16 @@ views:
           style:
             left: 50.0%
             top: 58.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -441,15 +465,16 @@ views:
           style:
             left: 50.0%
             top: 66.54%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -458,15 +483,16 @@ views:
           style:
             left: 50.0%
             top: 75.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
     - type: vertical-stack
       cards:
       - type: entities
@@ -485,15 +511,16 @@ views:
           style:
             left: 26.36%
             top: 11.54%
+            transform: translate(-50%, -50%)
             width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -502,15 +529,16 @@ views:
           style:
             left: 73.64%
             top: 11.54%
+            transform: translate(-50%, -50%)
             width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -519,15 +547,16 @@ views:
           style:
             left: 29.09%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -536,15 +565,16 @@ views:
           style:
             left: 50.0%
             top: 20.38%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -553,15 +583,16 @@ views:
           style:
             left: 70.91%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -570,15 +601,16 @@ views:
           style:
             left: 50.0%
             top: 40.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -587,15 +619,16 @@ views:
           style:
             left: 50.0%
             top: 30.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 46px
+            height: 46px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -604,15 +637,16 @@ views:
           style:
             left: 20.91%
             top: 48.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 54px
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -621,15 +655,16 @@ views:
           style:
             left: 79.09%
             top: 48.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 54px
+            height: 40px
+            background: rgba(128,128,128,0.35)
+            border-radius: 8px
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -638,15 +673,16 @@ views:
           style:
             left: 50.0%
             top: 49.62%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -655,15 +691,16 @@ views:
           style:
             left: 50.0%
             top: 58.08%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -672,15 +709,16 @@ views:
           style:
             left: 50.0%
             top: 66.54%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'
         - type: action-button
           title: ' '
           action: button.press
@@ -689,12 +727,13 @@ views:
           style:
             left: 50.0%
             top: 75.0%
-            width: 44px
-            height: 44px
-            background: transparent
-            border: none
+            transform: translate(-50%, -50%)
+            width: 42px
+            height: 42px
+            background: rgba(128,128,128,0.35)
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.25)
             color: transparent
             font-size: '0'
             padding: '0'
             cursor: pointer
-            opacity: '0.01'

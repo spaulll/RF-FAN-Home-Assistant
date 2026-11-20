@@ -1,0 +1,435 @@
+- alias: Fan 1 remote sync (state)
+  description: Sync fan entity from remote button presses; RF already sent by ESP
+  trigger:
+  - platform: state
+    entity_id:
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_on
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_off
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_1
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_2
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_3
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_4
+    - button.bedroom_fan_rf_remote_3_fans_fan_1_5
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_on''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_off''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.turn_off
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_1''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+        data:
+          percentage: 20
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_2''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+        data:
+          percentage: 40
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_3''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+        data:
+          percentage: 60
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_4''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+        data:
+          percentage: 80
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_1_5''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+        data:
+          percentage: 100
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_1
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+  mode: single
+- alias: Fan 2 remote sync (state)
+  description: Sync fan entity from remote button presses; RF already sent by ESP
+  trigger:
+  - platform: state
+    entity_id:
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_on
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_off
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_1
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_2
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_3
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_4
+    - button.bedroom_fan_rf_remote_3_fans_fan_2_5
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_on''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_off''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.turn_off
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_1''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+        data:
+          percentage: 20
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_2''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+        data:
+          percentage: 40
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_3''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+        data:
+          percentage: 60
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_4''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+        data:
+          percentage: 80
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_2_5''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+        data:
+          percentage: 100
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_2
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+  mode: single
+- alias: Fan 3 remote sync (state)
+  description: Sync fan entity from remote button presses; RF already sent by ESP
+  trigger:
+  - platform: state
+    entity_id:
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_on
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_off
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_1
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_2
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_3
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_4
+    - button.bedroom_fan_rf_remote_3_fans_fan_3_5
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_on''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_off''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.turn_off
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_1''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+        data:
+          percentage: 20
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_2''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+        data:
+          percentage: 40
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_3''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+        data:
+          percentage: 60
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_4''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+        data:
+          percentage: 80
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.entity_id == ''button.bedroom_fan_rf_remote_3_fans_fan_3_5''
+          }}'
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+      - service: fan.set_percentage
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+        data:
+          percentage: 100
+      - service: fan.turn_on
+        target:
+          entity_id: fan.bedroom_fan_rf_remote_3_fans_fan_3
+      - delay: 0.7
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
+  mode: single
