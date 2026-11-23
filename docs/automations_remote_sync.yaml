@@ -14,14 +14,14 @@ action:
       entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
   - if:
       condition: template
-      value_template: "{{ trigger.event.data.button == 'OFF' }}"
+      value_template: "{{ trigger.event.data.button | string in ['OFF','0'] }}"
     then:
       - service: fan.turn_off
         target:
           entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
   - if:
       condition: template
-      value_template: "{{ trigger.event.data.button in ['1','2','3','4','5'] }}"
+      value_template: "{{ trigger.event.data.button | string in ['1','2','3','4','5'] }}"
     then:
       - service: fan.set_percentage
         target:
@@ -33,14 +33,14 @@ action:
           entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
   - if:
       condition: template
-      value_template: "{{ trigger.event.data.button == 'ON' }}"
+      value_template: "{{ trigger.event.data.button | string in ['ON','6'] }}"
     then:
       - service: fan.turn_on
         target:
           entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
   - if:
       condition: template
-      value_template: "{{ trigger.event.data.button not in ['OFF','1','2','3','4','5','ON'] }}"
+      value_template: "{{ trigger.event.data.button | string not in ['OFF','0','1','2','3','4','5','ON','6'] }}"
     then:
       - service: input_text.set_value
         target:

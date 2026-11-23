@@ -136,7 +136,7 @@ script:
     then:
       - if:
           condition:
-            lambda: 'return id(boot_armed) && !id(suppress_rf);'
+            lambda: 'return id(boot_armed);'
           then:
             - if:
                 condition:
@@ -261,7 +261,7 @@ script:
     then:
       - if:
           condition:
-            lambda: 'return id(boot_armed) && !id(suppress_rf);'
+            lambda: 'return id(boot_armed);'
           then:
             - if:
                 condition:
@@ -386,7 +386,7 @@ script:
     then:
       - if:
           condition:
-            lambda: 'return id(boot_armed) && !id(suppress_rf);'
+            lambda: 'return id(boot_armed);'
           then:
             - if:
                 condition:
