@@ -24,6 +24,9 @@ DIY 433.92 MHz RF bridge for three Crompton BLDC ceiling fans, controlled from H
 | `docs/captured_codes.md` | All 39 captured RF codes (raw µs pulse lists) |
 | `docs/fans_remote.yaml` | HA Lovelace dashboard (SVG remote + button grid) |
 | `docs/hass-configuration-snippet.yaml` | `lovelace.dashboards` registration snippet |
+| `docs/automations_remote_sync.yaml` | HA automation matching physical remote presses (`esphome.rf_fan_remote_press` event) against the 39 captured codes and syncing fan entities (loop-safe via `rf_suppress`) |
+| `docs/gen_remote_sync_automation.py` | Regenerates the automation table from the firmware's own code arrays |
+| `docs/remote-to-ha-sync-design.md` | Design notes for the physical-remote → HA sync feature |
 | `diagrams/fan_remote.svg` | Remote panel graphic used by the dashboard |
 
 ---
@@ -140,6 +143,16 @@ Use the HA app; open the **Fan Remotes** dashboard.
 | No RF at all | Check CC1101 wiring / `Chip ID 0x0014` in logs; avoid 5V on VCC |
 
 ---
+
+## Physical remote → HA sync (RF RX)
+
+The CC1101 RX path (GDO2 → GPIO10) is used to listen for physical remote presses:
+
+1. Firmware `remote_receiver.on_raw` publishes an `esphome.rf_fan_remote_press` event (raw µs pulses).
+2. HA automation `RF Fan Remote · physical remote sync` (see `docs/automations_remote_sync.yaml`) normalizes the pulses (S/L) and matches against the 39 captured codes.
+3. On match it updates the fan entity with `rf_suppress` ON — so **no RF is re-transmitted** (no echo/double-beep). Sleep/HYP/timer presses are recorded to `input_text.fan_last_remote_command`.
+
+The matching table is generated from the firmware's own code arrays (`docs/gen_remote_sync_automation.py`) so firmware and HA never drift apart.
 
 ## Backup
 
