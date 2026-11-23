@@ -7,6 +7,8 @@ trigger:
     event_type: esphome.rf_fan_remote_press
 condition: []
 action:
+  - condition: template
+    value_template: "{{ trigger.event.data.fan | int(0) > 0 }}"
   - service: switch.turn_on
     target:
       entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress

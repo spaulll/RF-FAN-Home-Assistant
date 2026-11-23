@@ -95,12 +95,28 @@ static const CodeEntry kCodes[] = {
 };
 
 static constexpr size_t kCodeLen = 65;
-static constexpr size_t kMaxDiff = 4;
+static constexpr int kMaxEdit = 7;
 
-static inline int hamming(const char* a, const char* b, size_t n) {
-  int d = 0;
-  for (size_t i = 0; i < n; i++) if (a[i] != b[i]) d++;
-  return d;
+static int g_dp[72][72];  // shared scratch (single-threaded)
+
+static inline int edit_dist(const char* a, size_t n, const char* b, size_t m, int cap) {
+  if (n > 71) n = 71;
+  if (m > 71) m = 71;
+  for (size_t i = 0; i <= n; i++) g_dp[i][0] = (int)i;
+  for (size_t j = 0; j <= m; j++) g_dp[0][j] = (int)j;
+  for (size_t i = 1; i <= n; i++) {
+    int row_min = cap + 1;
+    for (size_t j = 1; j <= m; j++) {
+      int cost = (a[i-1] == b[j-1]) ? 0 : 1;
+      int v = g_dp[i-1][j-1] + cost;
+      if (g_dp[i-1][j] + 1 < v) v = g_dp[i-1][j] + 1;
+      if (g_dp[i][j-1] + 1 < v) v = g_dp[i][j-1] + 1;
+      g_dp[i][j] = v;
+      if (v < row_min) row_min = v;
+    }
+    if (row_min > cap) return cap + 1;  // early bail
+  }
+  return g_dp[n][m];
 }
 
 // Decode raw RX pulses (µs, alternating mark/space) into S/L string.
@@ -120,24 +136,58 @@ template<typename T>
 static inline bool rf_match(const std::vector<T>& x, int& fan, int& button) {
   char buf[80];
   size_t n = x.size();
-  if (n < 63 || n > 70) return false;
+  if (n < 62 || n > 72) return false;
   normalize(x, buf, sizeof(buf) - 1);
   size_t len = strlen(buf);
-  // candidate alignments (drop trailing / leading)
-  struct { const char* p; size_t l; } cand[2];
-  size_t nc = 0;
-  if (len >= kCodeLen) { cand[nc].p = buf; cand[nc].l = kCodeLen; nc++; }
-  if (len >= kCodeLen + 1) { cand[nc].p = buf + 1; cand[nc].l = kCodeLen; nc++; }
-  for (size_t c = 0; c < nc; c++) {
+  int best = kMaxEdit;
+  int best_i = -1;
+  // try raw and shifted (drop leading pulse) alignments
+  for (int shift = 0; shift <= 1; shift++) {
+    if (len < kCodeLen + (size_t)shift) continue;
+    const char* p = buf + shift;
     for (size_t i = 0; i < 39; i++) {
-      if (hamming(cand[c].p, kCodes[i].sig, kCodeLen) <= kMaxDiff) {
-        fan = kCodes[i].fan;
-        button = kCodes[i].key;
-        return true;
-      }
+      int d = edit_dist(p, len - shift, kCodes[i].sig, kCodeLen, best);
+      if (d < best) { best = d; best_i = (int)i; }
     }
   }
-  return false;
+  if (best_i < 0) return false;
+  fan = kCodes[best_i].fan;
+  button = kCodes[best_i].key;
+  return true;
+}
+
+// ---- burst vote aggregator ----
+namespace {
+  uint32_t s_last_frame = 0;
+  uint32_t s_win_start = 0;
+  int s_votes[3][13] = {};
+  int s_best_fan = -1, s_best_btn = -1, s_best_cnt = 0;
+}
+
+template<typename T>
+static inline void rf_observe(const std::vector<T>& x) {
+  uint32_t now = millis();
+  bool open = (s_win_start != 0) && (now - s_win_start <= 300);
+  if (!open) {
+    std::memset(s_votes, 0, sizeof(s_votes));
+    s_win_start = now; s_best_cnt = 0; s_best_fan = -1; s_best_btn = -1;
+  }
+  int f, b;
+  if (!rf_match(x, f, b)) return;
+  s_votes[f - 1][b]++;
+  if (s_votes[f - 1][b] > s_best_cnt) {
+    s_best_cnt = s_votes[f - 1][b]; s_best_fan = f; s_best_btn = b;
+  }
+  s_last_frame = now;
+}
+
+static inline bool rf_pending() { return s_best_cnt > 0 && s_last_frame != 0; }
+
+static inline bool rf_ready(uint32_t now) { return s_best_cnt > 0 && (now - s_last_frame >= 200); }
+
+static inline void rf_take(int& fan, int& btn) {
+  fan = s_best_fan; btn = s_best_btn;
+  s_best_cnt = 0; s_best_fan = -1; s_best_btn = -1; s_win_start = 0; s_last_frame = 0;
 }
 
 }  // namespace rf_fan

@@ -59,16 +59,34 @@ remote_receiver:
   idle: 4ms
   buffer_size: 4kb
   on_raw:
-    - if:
-        condition:
-          lambda: |-
-            return rf_fan::rf_match(x, id(rf_match_fan), id(rf_match_button));
-        then:
-          - homeassistant.event:
-              event: esphome.rf_fan_remote_press
-              data:
-                fan: !lambda 'return id(rf_match_fan);'
-                button: !lambda 'return std::string(rf_fan::kButtons[id(rf_match_button)]);'
+    - lambda: |-
+        std::string s;
+        s.reserve(x.size() * 4);
+        bool first = true;
+        for (int v : x) {
+          if (!first) s += ',';
+          first = false;
+          s += std::to_string(v);
+        }
+        id(rf_last_raw) = s;
+        rf_fan::rf_observe(x);
+        id(rf_window_active) = rf_fan::rf_pending();
+
+interval:
+  - interval: 200ms
+    then:
+      - if:
+          condition:
+            lambda: 'return id(rf_window_active) && rf_fan::rf_ready(millis());'
+          then:
+            - lambda: 'rf_fan::rf_take(id(rf_match_fan), id(rf_match_button));'
+            - homeassistant.event:
+                event: esphome.rf_fan_remote_press
+                data:
+                  fan: !lambda 'return id(rf_match_fan);'
+                  button: !lambda 'return id(rf_match_button);'
+                  raw: !lambda 'return id(rf_last_raw);'
+            - lambda: 'id(rf_window_active) = false;'
 
 globals:
   - id: boot_writes
@@ -95,6 +113,12 @@ globals:
   - id: rf_match_button
     type: int
     initial_value: '-1'
+  - id: rf_last_raw
+    type: std::string
+    initial_value: '""'
+  - id: rf_window_active
+    type: bool
+    initial_value: 'false'
 
 switch:
   - platform: template
