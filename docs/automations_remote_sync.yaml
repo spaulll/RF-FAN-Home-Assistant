@@ -7,49 +7,44 @@ trigger:
     event_type: esphome.rf_fan_remote_press
 condition: []
 action:
-  - variables:
-      rc_fan: "{{ trigger.event.data.fan | string }}"
-      rc_btn: "{{ trigger.event.data.button | string }}"
-  - condition: template
-    value_template: "{{ rc_fan is defined and rc_btn is defined and rc_fan | length > 0 }}"
   - service: switch.turn_on
     target:
       entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
   - if:
       condition: template
-      value_template: "{{ rc_btn == 'OFF' }}"
+      value_template: "{{ trigger.event.data.button == 'OFF' }}"
     then:
       - service: fan.turn_off
         target:
-          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ rc_fan }}"
+          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
   - if:
       condition: template
-      value_template: "{{ rc_btn == '1' or rc_btn == '2' or rc_btn == '3' or rc_btn == '4' or rc_btn == '5' }}"
+      value_template: "{{ trigger.event.data.button in ['1','2','3','4','5'] }}"
     then:
       - service: fan.set_percentage
         target:
-          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ rc_fan }}"
+          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
         data:
-          percentage: "{{ [20,40,60,80,100][rc_btn|int - 1] }}"
+          percentage: "{{ [20,40,60,80,100][trigger.event.data.button|int - 1] }}"
       - service: fan.turn_on
         target:
-          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ rc_fan }}"
+          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
   - if:
       condition: template
-      value_template: "{{ rc_btn == 'ON' }}"
+      value_template: "{{ trigger.event.data.button == 'ON' }}"
     then:
       - service: fan.turn_on
         target:
-          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ rc_fan }}"
+          entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ trigger.event.data.fan }}"
   - if:
       condition: template
-      value_template: "{{ rc_btn not in ['OFF','1','2','3','4','5','ON'] }}"
+      value_template: "{{ trigger.event.data.button not in ['OFF','1','2','3','4','5','ON'] }}"
     then:
       - service: input_text.set_value
         target:
           entity_id: input_text.fan_last_remote_command
         data:
-          value: "Fan {{ rc_fan }} · {{ rc_btn }} @ {{ now().strftime('%H:%M:%S') }}"
+          value: "Fan {{ trigger.event.data.fan }} · {{ trigger.event.data.button }} @ {{ now().strftime('%H:%M:%S') }}"
   - delay: 0.7
   - service: switch.turn_off
     target:
