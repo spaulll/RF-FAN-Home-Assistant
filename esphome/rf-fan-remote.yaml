@@ -1,6 +1,8 @@
 esphome:
   name: rf-fan-remote
   friendly_name: Fan RF Remote (3 Fans)
+  includes:
+    - codes_table.h
   on_boot:
     priority: -100
     then:
@@ -59,21 +61,14 @@ remote_receiver:
   on_raw:
     - if:
         condition:
-          lambda: 'return x.size() >= 55 && x.size() <= 75;'
+          lambda: |-
+            return rf_fan::rf_match(x, id(rf_match_fan), id(rf_match_button));
         then:
           - homeassistant.event:
               event: esphome.rf_fan_remote_press
               data:
-                raw: !lambda |-
-                  std::string s;
-                  s.reserve(x.size() * 4);
-                  bool first = true;
-                  for (int v : x) {
-                    if (!first) s += ',';
-                    first = false;
-                    s += std::to_string(v);
-                  }
-                  return s;
+                fan: !lambda 'return id(rf_match_fan);'
+                button: !lambda 'return std::string(rf_fan::kButtons[id(rf_match_button)]);'
 
 globals:
   - id: boot_writes
@@ -94,6 +89,12 @@ globals:
   - id: boot_armed
     type: bool
     initial_value: 'false'
+  - id: rf_match_fan
+    type: int
+    initial_value: '-1'
+  - id: rf_match_button
+    type: int
+    initial_value: '-1'
 
 switch:
   - platform: template

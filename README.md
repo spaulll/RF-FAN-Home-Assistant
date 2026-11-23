@@ -148,11 +148,10 @@ Use the HA app; open the **Fan Remotes** dashboard.
 
 The CC1101 RX path (GDO2 → GPIO10) is used to listen for physical remote presses:
 
-1. Firmware `remote_receiver.on_raw` publishes an `esphome.rf_fan_remote_press` event (raw µs pulses).
-2. HA automation `RF Fan Remote · physical remote sync` (see `docs/automations_remote_sync.yaml`) normalizes the pulses (S/L) and matches against the 39 captured codes.
-3. On match it updates the fan entity with `rf_suppress` ON — so **no RF is re-transmitted** (no echo/double-beep). Sleep/HYP/timer presses are recorded to `input_text.fan_last_remote_command`.
+1. Firmware decodes the burst, fuzzy-matches it against the 39 captured codes (see `esphome/codes_table.h`), and publishes a compact `esphome.rf_fan_remote_press` event (`fan` + `button`).
+2. HA automation `RF Fan Remote · physical remote sync` (see `docs/automations_remote_sync.yaml`) updates the fan entity with `rf_suppress` ON — so **no RF is re-transmitted** (no echo/double-beep). Sleep/HYP/timer presses are recorded to `input_text.fan_last_remote_command`.
 
-The matching table is generated from the firmware's own code arrays (`docs/gen_remote_sync_automation.py`) so firmware and HA never drift apart.
+Code tables and the automation are generated from the firmware's own code arrays (`docs/gen_remote_sync_automation.py`) so firmware and HA never drift apart. Matching tolerance (currently ≤4 pulse differences) absorbs receiver jitter at frame tails.
 
 ## Backup
 

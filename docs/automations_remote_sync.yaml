@@ -1,76 +1,17 @@
-# Generated from firmware codes — do not edit by hand.
-# Source: esphome/rf-fan-remote.yaml (fan1/2/3_send scripts)
-# Re-generate with docs/gen_remote_sync_automation.py
+# Generated — do not edit by hand. Regenerate with docs/gen_remote_sync_automation.py
 
 alias: RF Fan Remote · physical remote sync
-description: Sync HA fan entities when a physical remote is used (matches captured RF codes).
+description: Sync HA fan entities when a physical remote is used (firmware-matched codes).
 trigger:
   - platform: event
     event_type: esphome.rf_fan_remote_press
 condition: []
 action:
   - variables:
-      rc_map:
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSSLLSLSSLSLSLSLSLSLLSSLLSS": "1:OFF"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSSLLSSLLSSLSLLSLSSLLSSLLSS": "1:1"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSLSLSLSSLLSLSSLLSSLLSSLS": "1:2"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSSLLSSLSLSLSLLSLSSLLSSLSLS": "1:3"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSSLSLLSLSSLLSSLSLSLLSSLSLS": "1:4"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSSLSLLSSLSLSLSLLSSLSLSLSLS": "1:5"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSLSLSSLSLLSLSLSLSSLLSSLS": "1:ON"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSSLSLSLSLLSSLSLLSLSLSLSS": "1:Sleep"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSLSSLSLSLSLLSLSLSLSSLSLS": "1:HYP"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSSLSLSLSLLSSLLSLSLSLSSLS": "1:1H"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSSLSLSLLSSLSLLSSLSLSLSLSLS": "1:2H"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSSLSLLSSLLSLSLLLSLSSLLLS": "1:3H"
-        "SLSLLSSLSLLSLSSLLSSLLSSLSLSLLSSLSLLSSLLSLSSLSLLSSLLSSLLSLSLSSLLSS": "1:4H"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLLSLSSLSLSLLSLSSLSLSLSLS": "2:OFF"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLLSSLLSSLLSSLSLSLLSSLSLS": "2:1"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLLSLSLSLSSLSLSLLSLSSLLSLSS": "2:2"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLLSSLSLSLSLLSSLSLSLLSLSS": "2:3"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLSLLSLSSLLSLSLSSLSLSLLSS": "2:4"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLSLLSSLSLSLSLSLSLLSLSLSS": "2:5"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLLSLSLSSLSLLSLSSLLSLSSLLSS": "2:ON"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLLSSLSLSLSLLSLSSLLSSLLSLSS": "2:Sleep"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLLSLSSLSLSLLSSLLSLSLSSLSLS": "2:HYP"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLLSLSSLLSSLSLLSLSLSSLLSLSS": "2:1H"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLSLSLLSSLLSSLSLSLSLSLSLS": "2:2H"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLLSSLSLLSSLSLSLLSLSLSSLLSS": "2:3H"
-        "SLLSLSSLSLSLLSLSSLSLSLLSLSSLLSLSSLSLSLSLSLLSLSLSSLSLLSSLSLSLSLSLS": "2:4H"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLLSLSSLSLLSSLSLSLLSSLLSS": "3:OFF"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLLSSLLSSLSLSLLSSLSLLSLSS": "3:1"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSLSLSLSLSSLSLLSSLLSSLLSSLS": "3:2"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLLSSLSLSLLSLSLSSLLSSLSLS": "3:3"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLSLLSLSSLSLSLSLSLLSSLSLS": "3:4"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLSLLSSLSLLSSLLSSLSLSLSLS": "3:5"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSLSLSLSSLSLSLLSLSLSSLLSSLS": "3:ON"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSLSSLSLSLSLSLLSLSLSLSSLSLS": "3:Sleep"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSLSLSSLSLSLLSLSSLLSLSSLLSS": "3:HYP"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSLSLSSLLSSLLSSLSLLSLSLSSLS": "3:1H"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLSLSLLSSLSLSLLSSLLSLSLSS": "3:2H"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSLSSLSLLSSLSLLSSLLSLSSLSLS": "3:3H"
-        "SLSLSLSLLSSLSLLSLSSLSLSLLSSLSLLSSLLSSLLSSLLSLSLSSLLSLSLSSLLSLSLSS": "3:4H"
-  - variables:
-      rc_raw: "{{ trigger.event.data.get('raw', '') }}"
+      rc_fan: "{{ trigger.event.data.fan | string }}"
+      rc_btn: "{{ trigger.event.data.button | string }}"
   - condition: template
-    value_template: >-
-      {% set delims = [',', ' '] %}
-      {{ rc_raw | length > 50 }}
-  - variables:
-      rc_sig: >-
-        {% set parts = rc_raw.split(',') | map('int') | list %}
-        {% set ns = namespace(pulses='') %}
-        {% for p in parts %}
-          {% set ns.pulses = ns.pulses ~ ('L' if p | abs >= 450 else 'S') %}
-        {% endfor %}
-        {{ ns.pulses }}
-  - variables:
-      rc_hit: "{{ rc_map.get(rc_sig, rc_map.get(rc_sig[:-1], '')) }}"
-  - condition: template
-    value_template: "{{ rc_hit | length > 0 }}"
-  - variables:
-      rc_fan: "{{ rc_hit.split(':')[0] }}"
-      rc_btn: "{{ rc_hit.split(':')[1] }}"
+    value_template: "{{ rc_fan is defined and rc_btn is defined and rc_fan | length > 0 }}"
   - service: switch.turn_on
     target:
       entity_id: switch.bedroom_fan_rf_remote_3_fans_rf_suppress
@@ -83,7 +24,7 @@ action:
           entity_id: "fan.bedroom_fan_rf_remote_3_fans_fan_{{ rc_fan }}"
   - if:
       condition: template
-      value_template: "{{ rc_btn in ['1','2','3','4','5'] }}"
+      value_template: "{{ rc_btn == '1' or rc_btn == '2' or rc_btn == '3' or rc_btn == '4' or rc_btn == '5' }}"
     then:
       - service: fan.set_percentage
         target:
